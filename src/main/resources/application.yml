@@ -1,0 +1,26 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: DEPARTMENT-SERVICE
+  zipkin:
+    base-url: ${ZIPKIN_SERVER_ADDRESS}
+  jpa:
+    hibernate: 
+      ddl-auto: update
+  datasource:
+    username: root
+    password: admin
+    driver-class-name: com.mysql.jdbc.Driver
+    show-sql: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: eureka-0
+  client: 
+    registerWithEureka: true
+    fetchRegisgtry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_ADDRESS}
